@@ -13,7 +13,7 @@ def convert_csv_to_json(filename):
 
         # Write JSON file
         with open("data.json", mode="w", encoding="utf-8") as json_file:
-            json.dump(data, json_file, indent=4)
+            json.dump(data, json_file)
 
         return True
 
