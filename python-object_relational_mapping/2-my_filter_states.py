@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Lists all states that match the name given as argument."""
-
 import MySQLdb
 import sys
 
@@ -14,16 +13,12 @@ if __name__ == "__main__":
         db=sys.argv[3],
         charset="utf8"
     )
-
     cur = conn.cursor()
-
     cur.execute(
         "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
         .format(sys.argv[4])
     )
-
     for row in cur.fetchall():
         print(row)
-
     cur.close()
     conn.close()
